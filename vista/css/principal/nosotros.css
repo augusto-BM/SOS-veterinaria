@@ -1,0 +1,37 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------- titulo y parrafo a p ---------------*/
+.titutlo-a{
+    text-align: center;
+    color: whitesmoke;
+    background-color: #75B5CB;
+    padding: 40px 0;
+    margin-bottom: 10px;
+    
+}
+div h5 i{
+    font-size: 15px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.titutlo-b{
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 10px;
+    
+}
+
+.titutlo-p{
+    margin-top: 20px;
+    text-align: justify;
+    font-family: 'Kanit', sans-serif;
+}
+
+.blog{
+    display: flex;
+    justify-content: center;
+}

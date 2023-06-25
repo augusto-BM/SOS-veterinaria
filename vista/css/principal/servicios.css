@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.titutlo-a{
+    text-align: center;
+    color: whitesmoke;
+    background-color: #441E82;
+    padding: 40px 0;
+    margin-bottom: 10px;
+    
+}
+
+div h5 i{
+    font-size: 15px;
+    font-family: 'Kanit', sans-serif;
+}
+.parrafo-p{
+    text-align: justify;
+    font-family: 'Kanit', sans-serif;
+    margin-bottom: 80px;
+}
+
+.btn-cita{
+    margin: 50px 0;
+}
+
+.puede-contactarnos{
+    margin-bottom: 50px;
+    
+}

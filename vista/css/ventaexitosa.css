@@ -1,0 +1,60 @@
+#Fondo-Portada {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
+#Logo {
+  height: 90px;
+  width: 90px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  z-index: 10;
+}
+
+.mida {
+  height: 200px;
+  width: 100%;
+  background-color: aqua;
+}
+
+#Frase-Presentacion {
+  font-size: 40px;
+  font-weight: bold;
+  color: #FFF;
+}
+
+#Btn-Ready {
+  height: auto;
+  width: 300px;
+  font-size: 18px;
+  background-color: transparent;
+  color: #FFF;
+  line-height: 26px;
+  border-radius: 28px;
+  border-color: #b00000;
+  cursor: pointer;
+  transition: width 0.2s;
+}
+
+#Btn-Ready:hover {
+  width: 320px;
+  background-color: #b00000;
+}
+
+#Aprende-Mas {
+  color: #FFF;
+  font-size: 18px;
+  opacity: 0.6;
+  position: absolute;
+  bottom: 0px;
+}
+
+.icon-keyboard_arrow_down {
+  color: #FFF;
+  font-size: 28px;
+  opacity: 0.6;
+}
