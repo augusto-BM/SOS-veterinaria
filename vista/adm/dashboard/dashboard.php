@@ -22,6 +22,7 @@ if(!isset($_SESSION['admin_name'])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+   
     <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
     <link rel="icon" href="../../imagenes/principal/logo.ico" type="image/x-icon">
     <title>Administrador SOS</title>   
@@ -30,6 +31,7 @@ if(!isset($_SESSION['admin_name'])){
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
     <link
     
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -38,6 +40,7 @@ if(!isset($_SESSION['admin_name'])){
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css?sas" rel="stylesheet">
     <link href="css/reloj.css" rel="sytlesheet">
+    <link href="css/zoom.css" rel="sytlesheet">
 
 </head>
 
@@ -52,7 +55,7 @@ if(!isset($_SESSION['admin_name'])){
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php">
                 <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fa-solid fa-shield-dog"></i>
+                <i class="fa-spin  fa-solid fa-shield-dog"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">SOS veterinaria<sup> Admin</sup></div>
             </a>
@@ -430,7 +433,7 @@ if(!isset($_SESSION['admin_name'])){
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "".$administrador;?></div>
                                         </div>
                                         <div class="col-auto">
-                                        <i class="fa-solid fa-key fa-xl"></i>
+                                        <i class="fa-beat fa-solid fa-key fa-xl"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -448,7 +451,7 @@ if(!isset($_SESSION['admin_name'])){
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "".$cliente ?></div>
                                         </div>
                                         <div class="col-auto">
-                                        <i class="fa-sharp fa-solid fa-user fa-xl"></i>
+                                        <i class="fa-beat fa-sharp fa-solid fa-user fa-xl"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -470,7 +473,7 @@ if(!isset($_SESSION['admin_name'])){
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                        <i class="fa-solid fa-handshake fa-xl"></i>
+                                        <i class="fa-beat fa-solid fa-handshake fa-xl"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -490,7 +493,7 @@ if(!isset($_SESSION['admin_name'])){
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "".$veterinario ?></div>
                                         </div>
                                         <div class="col-auto">
-                                        <i class="fa-solid fa-user-doctor fa-xl"></i>
+                                        <i class="fa-beat fa-solid fa-user-doctor fa-xl"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -509,7 +512,7 @@ if(!isset($_SESSION['admin_name'])){
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "".$clinica ?></div>
                                         </div>
                                         <div class="col-auto">
-                                        <i class="fa-solid fa-hospital fa-xl"></i>
+                                        <i class="fa-beat fa-solid fa-hospital fa-xl"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -527,8 +530,8 @@ if(!isset($_SESSION['admin_name'])){
                                                 Mascotas Inscritas</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "".$mascota ?></div>
                                         </div>
-                                        <div class="col-auto">
-                                        <i class="fa-sharp fa-solid fa-paw fa-xl"></i>
+                                        <div class="col-auto zoom">
+                                        <i class="fa-beat fa-sharp fa-solid fa-paw fa-xl"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -545,7 +548,7 @@ if(!isset($_SESSION['admin_name'])){
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "".$historial ?></div>
                                         </div>
                                         <div class="col-auto">
-                                        <i class="fa-regular fa-file-medical fa-xl"></i>
+                                        <i class="fa-beat fa-solid fa-file-medical fa-xl"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -561,7 +564,7 @@ if(!isset($_SESSION['admin_name'])){
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "".$turno ?></div>
                                         </div>
                                         <div class="col-auto">
-                                        <i class="fa-solid fa-clock fa-xl"></i>
+                                        <i class="fa-beat fa-solid fa-clock fa-xl"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -577,7 +580,7 @@ if(!isset($_SESSION['admin_name'])){
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "".$servicio ?></div>
                                         </div>
                                         <div class="col-auto">
-                                        <i class="fa-solid fa-lock fa-xl"></i>
+                                        <i class="fa-beat fa-solid fa-lock fa-xl"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -593,7 +596,7 @@ if(!isset($_SESSION['admin_name'])){
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "".$producto ?></div>
                                         </div>
                                         <div class="col-auto">
-                                        <i class="fa-sharp fa-solid fa-cookie fa-xl"></i>
+                                        <i class="fa-beat fa-sharp fa-solid fa-cookie fa-xl"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -609,7 +612,7 @@ if(!isset($_SESSION['admin_name'])){
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "".$compra ?></div>
                                         </div>
                                         <div class="col-auto">
-                                        <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                                        <i class="fa-beat fa-solid fa-cart-shopping fa-xl"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -625,7 +628,7 @@ if(!isset($_SESSION['admin_name'])){
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "".$detalleCompra ?></div>
                                         </div>
                                         <div class="col-auto">
-                                        <i class="fa-sharp fa-solid fa-window-restore fa-xl"></i>
+                                        <i class="fa-beat fa-sharp fa-solid fa-window-restore fa-xl"></i>
                                         </div>
                                     </div>
                                 </div>
