@@ -661,6 +661,8 @@ if(!isset($_SESSION['admin_name'])){
         </div>
     </div>
 
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="../../js/animacionDashboard.js"></script>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

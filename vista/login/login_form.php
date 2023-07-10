@@ -79,7 +79,7 @@
 					 <i class="formulario__validacion-estado fas fa-times-circle"></i>
                      <img src="../imagenes/principal/correo-electronico.ico" class="iconos">
 <!--                      <i class="fa-regular fa-envelope fa-xl iconos"></i>
- -->				 </div>
+ -->			</div>
                  
 				 <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo. <b><i>ejemplo@correo.com</i></b></p>
 			 </div>
@@ -250,6 +250,8 @@
 </footer>
 <!-- ---------------------------------------------------------------------------------------------------->
 <script src="../js/validar_login.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+    <script src="../js/animacionLogin.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
