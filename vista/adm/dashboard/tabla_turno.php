@@ -1,37 +1,32 @@
-<?php session_start();
-
-if(!isset($_SESSION['admin_name'])){
-   header('location:login_form.php');
-}
-
-?>
-
-<!DOCTYPE html>
 <html lang="es">
+<!-- BARRA DE NAV EMPIEZA EN LA FILA 	pag 169-->
+<!-- Recuperar nombre del admninitrador pag 338-->
 <head>
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-<script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
-<link rel="icon" href="../../imagenes/principal/logo.ico" type="image/x-icon">
-<title>Administrador SOS</title>   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../../imagenes/principal/logo.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Custom fonts for this template-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>Administrador SOS</title>   
 
-<link
+    <!-- Custom fonts for this template-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link
+    
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet">
-
-<!-- Custom styles for this template-->
-<link href="css/sb-admin-2.min.css?sas" rel="stylesheet">
-<link href="css/reloj.css" rel="sytlesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css?asd" rel="stylesheet">
+    <link href="css/reloj.css" rel="sytlesheet">
 
 </head>
 

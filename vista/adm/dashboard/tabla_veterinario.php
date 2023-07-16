@@ -1,37 +1,34 @@
-<?php session_start();
 
-if(!isset($_SESSION['admin_name'])){
-   header('location:login_form.php');
-}
 
-?>
-
-<!DOCTYPE html>
 <html lang="es">
+<!-- BARRA DE NAV EMPIEZA EN LA FILA 	pag 169-->
+<!-- Recuperar nombre del admninitrador pag 338-->
 <head>
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-<script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
-<link rel="icon" href="../../imagenes/principal/logo.ico" type="image/x-icon">
-<title>Administrador SOS</title>   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../../imagenes/principal/logo.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Custom fonts for this template-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>Administrador SOS</title>   
 
-<link
+    <!-- Custom fonts for this template-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link
+    
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet">
-
-<!-- Custom styles for this template-->
-<link href="css/sb-admin-2.min.css?sas" rel="stylesheet">
-<link href="css/reloj.css" rel="sytlesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css?asd" rel="stylesheet">
+    <link href="css/reloj.css" rel="sytlesheet">
 
 </head>
 
@@ -66,7 +63,7 @@ if(!isset($_SESSION['admin_name'])){
     <div class="container">
         <?php
             include '../../../controlador/controlador_tablas/controlador_tabla_veterinario.php';
-            $select = "SELECT * FROM veterinario";
+            $select = "SELECT v.id_veterinario, t.id_turno, t.hora_inicio, t.hora_final, c.id_clinica, c.nombre_clinica, v.dni_veterinario, v.nombre_veterinario, v.apellido_veterinario, v.genero_veterinario, v.telefono_veterinario FROM turno t INNER JOIN veterinario v ON (t.id_turno = v.id_turno) INNER JOIN clinica c ON (v.id_clinica = c.id_clinica);";
             $tabla = mysqli_query($conn, $select);
         ?>
         <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center; font-weight: 600;">TABLA VETERINARIO</h3><hr>
@@ -84,46 +81,83 @@ if(!isset($_SESSION['admin_name'])){
                         <div class="modal-body">
                             <div class="form-row">
                                                     <!-- Etiquetas e dentro del formulario-->
-                                <div class="form-group col-md-5">                             
+                                <div class="form-group col-md-6">                             
                                     <label for="">ID:</label>
                                     <input type="text" class="form-control" name="id_veterinario" id="id_veterinario" value="<?php echo $id_veterinario;?>" readonly><br>
                                 </div>
 
-                                <div class="form-group col-md-7">
+                                <!--Modificación ID CLINICA de input a select-->
+                                <div class="form-group col-md-6">
+                                    <label>Turno (<?php echo $hora_i;?>-<?php echo $hora_f;?>):</label>
+                                    <select name="id_turno1" id="id_turno1" class="form-select">
+                                        <?php
+                                            @include '../../modelo/config.php';
+                                            include '../../../controlador/controlador_tablas/controlador_tabla_admin.php';
+
+                                            $consulta = "SELECT * FROM turno";
+                                            $ejecutar = mysqli_query($conn,$consulta);
+                                        ?>
+                                        <?php foreach ($ejecutar as $opciones): $i=$opciones['id_turno']; $a=$opciones['hora_inicio']; $e=$opciones['hora_final']; ?> 
+                                            
+                                            <option value="<?php echo $i; ?>"><?php echo $a; ?> - <?php echo $e; ?> </option>
+                                        
+                                            <?php endforeach ?>
+                                    </select><br>
+                                </div>
+
+                                <!--<div class="form-group col-md-7">
                                     <label for="">ID Turno:</label>
                                     <input type="text" class="form-control" required name="id_turno" placerholder="" id="id_turno" value="<?php echo $id_turno;?>"><br>
+                                </div>-->
+                                        <!--Modificación ID CLINICA de input a select-->
+                                <div class="form-group col-md-6">
+                                    <label>Clinica (<?php echo $nombre_clinica; ?>):</label>
+                                    <select name="id_clinica1" id="id_clinica1" class="form-select">
+                                        <?php
+                                            @include '../../modelo/config.php';
+                                            include '../../../controlador/controlador_tablas/controlador_tabla_admin.php';
+
+                                            $consulta = "SELECT * FROM clinica";
+                                            $ejecutar = mysqli_query($conn,$consulta);
+                                        ?>
+                                        <?php foreach ($ejecutar as $opciones): $i=$opciones['id_clinica']; $a=$opciones['nombre_clinica'];?> 
+                                            
+                                            <option value="<?php echo $i; ?>"><?php echo $a; ?></option>
+                                        
+                                            <?php endforeach ?>
+                                    </select><br>
                                 </div>
 
-                                <div class="form-group col-md-5">
+                               <!-- <div class="form-group col-md-5">
                                     <label for="">ID Clínica:</label>
                                     <input type="text" class="form-control" required name="id_clinica" placerholder="" id="id_clinica" value="<?php echo $id_clinica;?>"><br>
-                                </div>
+                                </div>-->
 
-                                <div class="form-group col-md-7">
+                                <div class="form-group col-md-6">
                                     <label>DNI:</label>
                                     <input type="text" class="form-control" required name="dni_veterinario" placerholder="" id="dni_veterinario" value="<?php echo $dni_veterinario;?>"><br>
                                 </div>
 
-                                <div class="form-group col-md-5">
+                                <div class="form-group col-md-6">
                                     <label for="">Nombre:</label>
                                     <input type="text" class="form-control" required name="nombre_veterinario" placerholder="" id="nombre_veterinario" value="<?php echo $nombre_veterinario;?>"><br>
                                 </div>
 
-                                <div class="form-group col-md-7">
+                                <div class="form-group col-md-6">
                                     <label for="">Apellido:</label>
                                     <input type="text" class="form-control" required name="apellido_veterinario" placerholder="" id="apellido_veterinario" value="<?php echo $apellido_veterinario;?>"><br>
                                 </div>
 
-                                <div class="form-group col-md-5">
+                                <div class="form-group col-md-6">
                                     <label>Género:</label>
-                                    <select name="genero_veterinario" class="form-control">
+                                    <select name="genero_veterinario" class="form-select">
                                         <option value="<?php echo $genero_veterinario; ?>"> <?php echo $genero_veterinario; ?></option>
                                         <option value="femenino">femenino</option>
                                         <option value="masculino">masculino </option>
                                     </select><br>
                                 </div>
 
-                                <div class="form-group col-md-7">
+                                <div class="form-group col-md-6">
                                     <label for="">Telefono:</label>
                                     <input type="text" class="form-control" required name="telefono_veterinario" placerholder="" id="telefono_veterinario" value="<?php echo $telefono_veterinario;?>"><br>
                                 </div>
@@ -171,7 +205,7 @@ if(!isset($_SESSION['admin_name'])){
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while($row = mysqli_fetch_array($tabla)){?>                        
+                    <?php while($row = mysqli_fetch_array($tabla) or $op = mysqli_fetch_array($ejecutar)){?>                        
                         <tr>
                             <td><?php echo $row['id_veterinario'];?></td>
                             <td><?php echo $row['id_turno']; ?></td>
@@ -185,7 +219,10 @@ if(!isset($_SESSION['admin_name'])){
                             <form action="" method="post">
                             <input type="hidden" name="id_veterinario" value=" <?php echo $row['id_veterinario']; ?>">
                             <input type="hidden" name="id_turno" value=" <?php echo $row['id_turno']; ?>">
+                            <input type="hidden" name="hora_inicio" value=" <?php echo $row['hora_inicio']; ?>">
+                            <input type="hidden" name="hora_final" value=" <?php echo $row['hora_final']; ?>">
                             <input type="hidden" name="id_clinica" value=" <?php echo $row['id_clinica']; ?>">
+                            <input type="hidden" name="nombre_clinica" value=" <?php echo $row['nombre_clinica']; ?>">
                             <input type="hidden" name="dni_veterinario" value=" <?php echo $row['dni_veterinario']; ?>">
                             <input type="hidden" name="nombre_veterinario" value=" <?php echo $row['nombre_veterinario']; ?>">
                             <input type="hidden" name="apellido_veterinario" value=" <?php echo $row['apellido_veterinario']; ?>">
