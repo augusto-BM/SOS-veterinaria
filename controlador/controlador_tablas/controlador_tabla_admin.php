@@ -4,6 +4,8 @@
 
     $id_adm = (isset($_POST['id_adm']))?$_POST['id_adm']:"";
     $id_clinica = (isset($_POST['id_clinica']))?$_POST['id_clinica']:"";
+    $i = (isset($_POST['id_clinica1']))?$_POST['id_clinica1']:"";
+    $nombre_clinica = (isset($_POST['nombre_clinica']))?$_POST['nombre_clinica']:"";
     $dni_adm = (isset($_POST['dni_adm']))?$_POST['dni_adm']:"";
     $nombre_adm = (isset($_POST['nombre_adm']))?$_POST['nombre_adm']:"";
     $apellido_adm = (isset($_POST['apellido_adm']))?$_POST['apellido_adm']:"";
@@ -41,7 +43,7 @@
                     header('location: ../../vista/adm/dashboard/tabla_admin.php');
                 }else{
                     //EL ID_CLINICA DEBE EXISTIR EN LA TABLA CLÍNICA, SINO NO AGREGA
-                    $insert = "INSERT INTO administrador(id_clinica, dni_adm, nombre_adm, apellido_adm, genero_adm, direccion_adm, telefono_adm, email, password, user_type) VALUES('$id_clinica','$dni_adm','$nombre_adm','$apellido_adm','$genero_adm','$direccion_adm','$telefono_adm','$email','$pass','$user_type')";
+                    $insert = "INSERT INTO administrador(id_clinica, dni_adm, nombre_adm, apellido_adm, genero_adm, direccion_adm, telefono_adm, email, password, user_type) VALUES('$i','$dni_adm','$nombre_adm','$apellido_adm','$genero_adm','$direccion_adm','$telefono_adm','$email','$pass','$user_type')";
                     mysqli_query($conn, $insert);
 
                     echo "<script> alert('Registro exitoso')</script>";
@@ -50,14 +52,14 @@
                 break;
             case "btnModificar":
                     //COMPLETADO.
-                    $update = "UPDATE administrador SET id_clinica='$id_clinica', dni_adm='$dni_adm', nombre_adm='$nombre_adm', apellido_adm='$apellido_adm', genero_adm='$genero_adm', direccion_adm='$direccion_adm', telefono_adm='$telefono_adm', email='$email' WHERE id_adm='$id_adm'";
+                    $update = "UPDATE administrador SET id_clinica='$i', dni_adm='$dni_adm', nombre_adm='$nombre_adm', apellido_adm='$apellido_adm', genero_adm='$genero_adm', direccion_adm='$direccion_adm', telefono_adm='$telefono_adm', email='$email' WHERE id_adm='$id_adm'";
                     mysqli_query($conn, $update);
                     echo "<script> alert('¡El registro se ha MODIFICADO correctamente!')</script>";
                     header('location: ../../vista/adm/dashboard/tabla_admin.php');
                 break;
             case "btnEliminar":
                     //Completado mensaje de confirmación.
-                    $delete = "DELETE FROM administrador WHERE email = '$email'";
+                    $delete = "DELETE FROM administrador WHERE id_adm = '$id_adm'";
                     mysqli_query($conn,$delete);
                     header('location: ../../vista/adm/dashboard/tabla_admin.php');
                 break;
@@ -69,7 +71,7 @@
                 $pass="readonly";
                 $accionAgregar="disabled";
                 $accionModificar = $accionEliminar = $accionCancelar = "";
-                $mostrarModal= true;
+                $mostrarModal = true;
                 break;
         }
 ?>

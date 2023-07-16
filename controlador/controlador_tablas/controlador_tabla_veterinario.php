@@ -2,7 +2,12 @@
     @include '../../modelo/config.php';
     $id_veterinario = (isset($_POST['id_veterinario']))?$_POST['id_veterinario']:"";
     $id_turno = (isset($_POST['id_turno']))?$_POST['id_turno']:"";
+    $t = (isset($_POST['id_turno1']))?$_POST['id_turno1']:"";
+    $hora_i = (isset($_POST['hora_inicio']))?$_POST['hora_inicio']:"";
+    $hora_f = (isset($_POST['hora_final']))?$_POST['hora_final']:"";
     $id_clinica = (isset($_POST['id_clinica']))?$_POST['id_clinica']:"";
+    $i = (isset($_POST['id_clinica1']))?$_POST['id_clinica1']:"";
+    $nombre_clinica = (isset($_POST['nombre_clinica']))?$_POST['nombre_clinica']:"";
     $dni_veterinario = (isset($_POST['dni_veterinario']))?$_POST['dni_veterinario']:"";
     $nombre_veterinario = (isset($_POST['nombre_veterinario']))?$_POST['nombre_veterinario']:"";
     $apellido_veterinario = (isset($_POST['apellido_veterinario']))?$_POST['apellido_veterinario']:"";
@@ -33,7 +38,7 @@
                     echo "<script> alert('¡Cuenta existente!')</script>";
                     header('location: ../../vista/adm/dashboard/tabla_veterinario.php');
                 }else{
-                    $insert = "INSERT INTO veterinario(id_turno, id_clinica, dni_veterinario, nombre_veterinario, apellido_veterinario, genero_veterinario, telefono_veterinario) VALUES( '$id_turno', '$id_clinica', '$dni_veterinario', '$nombre_veterinario', '$apellido_veterinario', '$genero_veterinario', '$telefono_veterinario')";
+                    $insert = "INSERT INTO veterinario(id_turno, id_clinica, dni_veterinario, nombre_veterinario, apellido_veterinario, genero_veterinario, telefono_veterinario) VALUES( '$t', '$i', '$dni_veterinario', '$nombre_veterinario', '$apellido_veterinario', '$genero_veterinario', '$telefono_veterinario')";
                     mysqli_query($conn, $insert);
 
                     echo "<script> alert('Registro exitoso')</script>";
@@ -42,7 +47,7 @@
                 break;
             case "btnModificar":
                     //TERMINADO.
-                    $update = "UPDATE veterinario SET id_turno='$id_turno', id_clinica='$id_clinica', dni_veterinario='$dni_veterinario', nombre_veterinario='$nombre_veterinario', apellido_veterinario='$apellido_veterinario', genero_veterinario='$genero_veterinario', telefono_veterinario='$telefono_veterinario' WHERE id_veterinario = '$id_veterinario'";
+                    $update = "UPDATE veterinario SET id_turno='$t', id_clinica='$i', dni_veterinario='$dni_veterinario', nombre_veterinario='$nombre_veterinario', apellido_veterinario='$apellido_veterinario', genero_veterinario='$genero_veterinario', telefono_veterinario='$telefono_veterinario' WHERE id_veterinario = '$id_veterinario'";
                     mysqli_query($conn,$update);
                     echo "<script> alert('Seleccionó el botón Modificar')</script>";
                     header('location: ../../vista/adm/dashboard/tabla_veterinario.php');

@@ -8,7 +8,7 @@ $fecha_reserva = mysqli_real_escape_string($conn, $_POST['fecha_reserva']);
 $hora_reserva = mysqli_real_escape_string($conn, $_POST['hora_reserva']);
 $tipo_reserva = mysqli_real_escape_string($conn, $_POST['tipo_reserva']);
 $modalidad_reserva = mysqli_real_escape_string($conn, $_POST['modalidad_reserva']);
-$comentarios = mysqli_real_escape_string($conn, $_POST['comentarios']);
+$comentarios = (isset($_POST['comentarios']))?$_POST['comentarios']:"";
 
 $accionAgregar = "";
 $accionModificar = $accionEliminar = $accionCancelar = "disabled";
