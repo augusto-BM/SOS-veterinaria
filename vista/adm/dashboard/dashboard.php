@@ -17,7 +17,7 @@ if(!isset($_SESSION['admin_name'])){
 										<!-- Recuperar nombre del admninitrador 		pag 338-->
 <head>
 
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -36,8 +36,8 @@ if(!isset($_SESSION['admin_name'])){
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css?sas" rel="stylesheet">
-    <link href="css/reloj.css" rel="sytlesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/reloj.css" rel="stylesheet">
 
 </head>
 

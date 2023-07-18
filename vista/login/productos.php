@@ -55,12 +55,10 @@
                     <ul class="navbar-nav ms-3">
                         <li class="nav-item h5 ms-5 ml-5"><a  class="nav-link" href="#">Bienvenido <?php echo $_SESSION['user_name'] ?></a></li>
                         <div class="dropdown show">
-                            <li class="nav-item">
-                                <i class="nav-link text-nowrap fa-regular fa-user fa-2xl dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" type="button" aria-expanded="false"></i></a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <i class="nav-link text-nowrap fa-regular fa-user fa-2xl dropdown-toggle mt-2 ms-3" data-toggle="dropdown" aria-haspopup="true" type="button" aria-expanded="false"></i></a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li><a class="dropdown-item" href="logout.php">Cerrar Sesión</a></li>
                             </ul>
-                            </li>
                         </div>
                     </ul>    
                     <ul class="navbar-nav ms-3">

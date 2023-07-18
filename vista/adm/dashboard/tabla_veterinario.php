@@ -1,5 +1,10 @@
+<?php session_start();
 
-
+if(!isset($_SESSION['admin_name'])){
+   header('location:login_form.php');
+}
+?>
+<!DOCTYPE html>
 <html lang="es">
 <!-- BARRA DE NAV EMPIEZA EN LA FILA 	pag 169-->
 <!-- Recuperar nombre del admninitrador pag 338-->

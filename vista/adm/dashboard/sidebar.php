@@ -38,7 +38,8 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fa-fade fa-solid fa-shield-dog"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SOS veterinaria<sup> Admin</sup></div>
+                <div class="sidebar-brand-text mx-3">SOS veterinaria<sup> 
+                    Admin</sup></div>
             </a>
 
             <!-- Divider -->
