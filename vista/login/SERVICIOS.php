@@ -65,7 +65,7 @@
     <!-- -------------------------------------   CONTENEDORES GRID   ------------------------------------ -->
     <div class="titutlo-a"><h5 ">SERVICIOS<br><i>Mejores cuidados, mejores mascotas</i></h1></div>
     <div class="d-grid gap-2 col-12 mx-auto text-center btn-cita">
-        <form action="../login/login_form.php">
+        <form action="cita.php">
             <button class="btn btn-lg btn-info" type="submit" >GENERAR CITA</button>
         </form>
     </div>
