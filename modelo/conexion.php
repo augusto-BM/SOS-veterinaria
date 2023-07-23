@@ -16,5 +16,8 @@ class Database{
         return $conn;
     }
 }
+
+//Se crea la función Conexión que permitirá realizar la conexión a la BD.
+//PDO: Es una extensión de php para poder acceder a BD (PHP DATA OBJECTS) 
     
 ?>
